@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  background: #0e0e1a;
+  color: #fff;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#ui .screen {
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+.screen.active {
+  display: block;
+}
+#mainMenu, #endScreen {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 20, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeIn 1s;
+}
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 1rem;
+}
+#minimap {
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid white;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+input, select, button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+}
