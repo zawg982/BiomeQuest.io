@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BiomeQuest.io</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BiomeQuest.io</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <canvas id="gameCanvas"></canvas>
-  <div id="ui">
-    <div id="mainMenu" class="screen active">
+  <div id="uiContainer">
+
+    <!-- MAIN MENU -->
+    <section id="mainMenu" class="screen active">
       <h1>BiomeQuest.io</h1>
-      <input id="usernameInput" placeholder="Enter Username" />
+      <input id="usernameInput" placeholder="Enter Username" maxlength="15" />
       <select id="skinSelect">
         <option value="default">Default Skin</option>
-        <option value="ice">Ice</option>
-        <option value="tech">Tech</option>
+        <option value="ice">Ice Skin</option>
+        <option value="tech">Tech Skin</option>
       </select>
       <button id="playButton">Play</button>
-      <div id="patchNotes"><h2>Patch Notes</h2><p>v1.0 - Game Launched!</p></div>
-      <div id="lore"><h2>Game Lore</h2><p>The BiomeCore shattered long ago...</p></div>
-    </div>
-    <div id="hud" class="screen">
-      <div id="minimap"></div>
-      <div id="stats">❤️ 100 | 🧪 XP 0</div>
-      <div id="inventory"></div>
-      <div id="weatherDisplay">☀️</div>
-    </div>
-    <div id="endScreen" class="screen"><h2>Game Over</h2><button onclick="location.reload()">Restart</button></div>
+      <div id="patchNotes" class="scrollBox">
+        <h2>Patch Notes</h2>
+        <p>v1.0 - Launch version: Procedural biomes, AI enemies, inventory, weather, day/night, XP leveling, and more!</p>
+        <p>v1.1 - Added crafting system and save/load.</p>
+      </div>
+      <div id="gameLore" class="scrollBox">
+        <h2>Game Lore</h2>
+        <p>The BiomeCore shattered, scattering life across realms. Explore diverse biomes, craft, battle, and evolve!</p>
+      </div>
+    </section>
+
+    <!-- HUD -->
+    <section id="hud" class="screen">
+      <div id="topBar">
+        <div id="stats">❤️ 100 | XP: 0/100 | Level: 1</div>
+        <div id="weatherDisplay">☀️</div>
+      </div>
+      <canvas id="minimap"></canvas>
+      <div id="inventoryContainer">
+        <h3>Inventory</h3>
+        <div id="inventory"></div>
+      </div>
+      <div id="chatBox">
+        <h3>Chat (Offline Demo)</h3>
+        <div id="chatMessages"></div>
+        <input id="chatInput" placeholder="Type a message..." disabled />
+      </div>
+    </section>
+
+    <!-- END SCREEN -->
+    <section id="endScreen" class="screen">
+      <h2>Game Over</h2>
+      <button id="restartButton">Restart</button>
+    </section>
+
   </div>
-  <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
