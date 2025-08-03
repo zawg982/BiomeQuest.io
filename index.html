@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BiomeQuest.io</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <div id="ui">
+    <div id="mainMenu" class="screen active">
+      <h1>BiomeQuest.io</h1>
+      <input id="usernameInput" placeholder="Enter Username" />
+      <select id="skinSelect">
+        <option value="default">Default Skin</option>
+        <option value="ice">Ice</option>
+        <option value="tech">Tech</option>
+      </select>
+      <button id="playButton">Play</button>
+      <div id="patchNotes"><h2>Patch Notes</h2><p>v1.0 - Game Launched!</p></div>
+      <div id="lore"><h2>Game Lore</h2><p>The BiomeCore shattered long ago...</p></div>
+    </div>
+    <div id="hud" class="screen">
+      <div id="minimap"></div>
+      <div id="stats">❤️ 100 | 🧪 XP 0</div>
+      <div id="inventory"></div>
+      <div id="weatherDisplay">☀️</div>
+    </div>
+    <div id="endScreen" class="screen"><h2>Game Over</h2><button onclick="location.reload()">Restart</button></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
